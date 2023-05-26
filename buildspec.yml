@@ -1,13 +1,18 @@
 version: 0.2
 phases:
+  install:
+    runtime-versions:
+      java: cerretto17
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - scho Build started on `date`
-      - mvn clean package
+      - mvn clean install
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo Build completed on `date`
 artifacts:
   files:
     - target/hello.jar
-  discard-paths: yes
