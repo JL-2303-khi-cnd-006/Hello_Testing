@@ -13,3 +13,4 @@ phases:
 artifacts:
   files:
     - target/hello.jar
+  discard-paths: yes
